@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Routes Table</title>
+</head>
+
+<style>
+	body {
+		margin: 0;
+		font-family: Arial, sans-serif;
+	}
+
+	h1 {
+		text-align: center;
+	}
+
+	table {
+		width: 100%;
+		border-collapse: collapse;
+	}
+
+	th, td {
+		border: 1px solid #dddddd;
+		text-align: left;
+		padding: 8px;
+	}
+
+	th {
+		background-color: #f2f2f2;
+	}
+</style>
+
+<body>
+	<h1>Routes Table</h1>
+	<table id="routesTable" border="1">
+		<thead>
+			<tr>
+				<th>HTTP Method</th>
+				<th>Description</th>
+				<th>Endpoint</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!-- Users Endpoints -->
+			<tr>
+				<td>GET</td>
+				<td>Retrieves all the users in the database</td>
+				<td>/users</td>
+			</tr>
+			<tr>
+				<td>GET</td>
+				<td>Retrieves a single user by ID</td>
+				<td>/user/:id</td>
+			</tr>
+			<tr>
+				<td>POST</td>
+				<td>Registers a new user</td>
+				<td>/register</td>
+			</tr>
+			<tr>
+				<td>POST</td>
+				<td>Logs in a user</td>
+				<td>/login</td>
+			</tr>
+			<tr>
+				<td>PUT</td>
+				<td>Updates user details</td>
+				<td>/user/:id</td>
+			</tr>
+			<tr>
+				<td>DELETE</td>
+				<td>Deletes a user by ID</td>
+				<td>/user/:id</td>
+			</tr>
+	
+			<!-- Projects Endpoints -->
+			<tr>
+				<td>GET</td>
+				<td>Retrieves all projects for a specific user</td>
+				<td>/user/:userID/projects</td>
+			</tr>
+			<tr>
+				<td>POST</td>
+				<td>Creates a new project for a user</td>
+				<td>/user/:userID/project</td>
+			</tr>
+			<tr>
+				<td>PUT</td>
+				<td>Updates a project for a user</td>
+				<td>/user/:userID/project/:projectID</td>
+			</tr>
+			<tr>
+				<td>DELETE</td>
+				<td>Deletes a project for a user</td>
+				<td>/user/:userID/project/:projectID</td>
+			</tr>
+	
+			<!-- Notes Endpoints -->
+			<tr>
+				<td>GET</td>
+				<td>Retrieves all notes for a specific user</td>
+				<td>/user/:userID/notes</td>
+			</tr>
+			<tr>
+				<td>POST</td>
+				<td>Creates a new note for a user</td>
+				<td>/user/:userID/note</td>
+			</tr>
+			<tr>
+				<td>PUT</td>
+				<td>Updates a note for a user</td>
+				<td>/user/:userID/note/:noteID</td>
+			</tr>
+			<tr>
+				<td>DELETE</td>
+				<td>Deletes a note for a user</td>
+				<td>/user/:userID/note/:noteID</td>
+			</tr>
+	
+			<!-- Courses Endpoints -->
+			<tr>
+				<td>GET</td>
+				<td>Retrieves all courses for a specific user</td>
+				<td>/user/:userID/courses</td>
+			</tr>
+			<tr>
+				<td>POST</td>
+				<td>Creates a new course for a user</td>
+				<td>/user/:userID/course</td>
+			</tr>
+			<tr>
+				<td>PUT</td>
+				<td>Updates a course for a user</td>
+				<td>/user/:userID/course/:courseID</td>
+			</tr>
+			<tr>
+				<td>DELETE</td>
+				<td>Deletes a course for a user</td>
+				<td>/user/:userID/course/:courseID</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+
+</html>
