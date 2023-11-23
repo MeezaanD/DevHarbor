@@ -145,7 +145,7 @@ class User {
 class Note {
 	fetchNotes(req, res, userID) {
 		const querySt = `
-      SELECT notes_id, user_id, title, content
+      SELECT notes_id, user_id, title, category, content
       FROM notes
       WHERE user_id = ?;
     `;
@@ -158,20 +158,21 @@ class Note {
 	createNote(req, res, userID) {
 		const noteData = req.body;
 		const querySt = `
-      INSERT INTO notes (user_id, title, content)
-      VALUES (?, ?, ?);
-    `;
-		DB.query(querySt, [userID, noteData.title, noteData.content], (err) => {
+			INSERT INTO notes (user_id, title, category, content)
+			VALUES (?, ?, ?, ?);
+		`;
+		DB.query(querySt, [userID, noteData.title, noteData.category, noteData.content], (err) => {
 			if (err) throw err;
 			res.status(200).json({ msg: "Note Created" });
 		});
 	}
+	
 
 	updateNote(req, res, userID, noteID) {
 		const noteData = req.body;
 		const querySt = `
       UPDATE notes
-      SET title = ?, content = ?
+      SET title = ?, category = ?, content = ?, 
       WHERE user_id = ? AND notes_id = ?;
     `;
 		DB.query(
