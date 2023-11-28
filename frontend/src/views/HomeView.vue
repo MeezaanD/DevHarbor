@@ -1,19 +1,18 @@
 <template>
 	<section id="home">
-		<!-- <Nav /> -->
-		<div class="d-flex justify-content-end m-3 gap-2">
+		<div class="text-center p-2">
 			<h3>Hello, Username</h3>
-			<Nav />
-		</div>
-		<div class="dropdown m-1">
-			<button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-				Create New
-			</button>
-			<ul class="dropdown-menu">
-				<li><a class="dropdown-item" href="/note">New Note</a></li>
-				<li><a class="dropdown-item" href="/project">New Project</a></li>
-				<li><a class="dropdown-item" href="/course">New Course</a></li>
-			</ul>
+			<div class="dropdown m-2">
+				<button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+					aria-expanded="false">
+					Create New
+				</button>
+				<ul class="dropdown-menu">
+					<li><a class="dropdown-item" href="/note">New Note</a></li>
+					<li><a class="dropdown-item" href="/project">New Project</a></li>
+					<li><a class="dropdown-item" href="/course">New Course</a></li>
+				</ul>
+			</div>
 		</div>
 		<div class="container-fluid">
 			<div class="row">
@@ -44,5 +43,6 @@ export default defineComponent({
 });
 </script>
 
-<style lang="less">@import "../css/home.less";
+<style lang="less">
+@import "../css/home.less";
 </style>

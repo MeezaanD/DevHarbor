@@ -3,7 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import ElementPlus from 'element-plus'
-import { ElTimeline, ElTimelineItem, ElCard } from 'element-plus';
+import { ElTimeline, ElTimelineItem, ElCard, ElIcon } from 'element-plus';
 import 'element-plus/dist/index.css'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -17,5 +17,6 @@ app.use(ElementPlus);
 app.component('ElTimeline', ElTimeline);
 app.component('ElTimelineItem', ElTimelineItem);
 app.component('ElCard', ElCard);
+app.component('ElIcon', ElIcon);
 
 app.use(store).use(router).mount('#app');
