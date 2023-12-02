@@ -1,6 +1,8 @@
 import { createStore } from 'vuex';
 import router from '@/router';
-const api: string = "https://localhost:2003"
+const api: string = "https://devharbor-api.onrender.com/"
+console.log(api);
+
 
 export default createStore({
 	state: {

@@ -1,7 +1,6 @@
 <template>
-	<section id="notes">
-		<h2 class="py-2 border-2 border-bottom">Notes</h2>
-		<el-timeline>
+	<el-timeline>
+			<h2 class="py-2 border-2 border-bottom">Notes</h2>
 			<el-timeline-item timestamp="2018/4/12" placement="top">
 				<el-card>
 					<h4>Update Github template</h4>
@@ -9,7 +8,6 @@
 				</el-card>
 			</el-timeline-item>
 		</el-timeline>
-	</section>
 </template>
 
 <script lang="ts">
