@@ -29,3 +29,32 @@ html {
 	font-size: 30px;
 	width: 100%;
 }
+
+#notes, #projects, #courses {
+	.path-to-home {
+		margin: 1rem;
+	}
+
+	.notes, #projects, .courses {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+		text-align: start;
+		margin: auto;
+		width: 100%;
+
+		.createNote, .createProject, .createCourse {
+			border: 1px solid black;
+			background: black;
+			color: #ffff;
+			border-radius: 5px;
+			padding: 1rem;
+			width: 100%;
+			// margin: 5px 0;
+		}
+	}
+
+	.el-timeline {
+		padding: 0;
+	}
+}

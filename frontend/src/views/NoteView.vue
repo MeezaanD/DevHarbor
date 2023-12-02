@@ -1,9 +1,9 @@
 <template>
 	<section id="notes">
 		<router-link class="path-to-home" to="/home">Back</router-link>
+		<button @click="toggleNoteForm" class="btn btn-primary float-end m-2">{{ showNoteForm ? 'Cancel' : 'Add Note' }}</button>
 		<div class="notes">
-			<notesFeed/>
-			<div class="noteForm">
+			<div v-if="showNoteForm" class="noteForm">
 				<h2 class="py-2 border-2 border-bottom">New Note</h2>
 				<form action="" method="post">
 					<div class="form-floating mb-3">
@@ -21,6 +21,7 @@
 					<button class="createNote" type="submit">Create Note</button>
 				</form>
 			</div>
+			<notesFeed v-if="!showNoteForm"/>
 		</div>
 	</section>
 </template>
@@ -31,9 +32,19 @@ import notesFeed from '@/components/notesFeed.vue';
 
 export default defineComponent({
 	components: { notesFeed },
+	data() {
+		return {
+			showNoteForm: false,
+		};
+	},
+	methods: {
+		toggleNoteForm() {
+			this.showNoteForm = !this.showNoteForm;
+		}
+	},
 });
 </script>
 
 <style lang="less">
-@import "../css/notes.less";
+@import "../css/main.less";
 </style>

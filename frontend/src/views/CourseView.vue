@@ -1,9 +1,9 @@
 <template>
 	<section id="courses">
 		<router-link class="path-to-home" to="/home">Back</router-link>
+		<button @click="toggleCourseForm" class="btn btn-primary float-end m-2">{{ showCourseForm ? 'Cancel' : 'Add Course' }}</button>
 		<div class="courses">
-			<coursesFeed/>
-			<div class="courseForm">
+			<div v-if="showCourseForm" class="courseForm">
 				<h2 class="py-2 border-2 border-bottom">New Course</h2>
 				<form action="" method="post">
 					<div class="form-floating mb-3">
@@ -25,6 +25,7 @@
 					<button class="createCourse" type="submit">Create Course</button>
 				</form>			
 			</div>
+			<coursesFeed v-if="!showCourseForm"/>
 		</div>
 	</section>
 </template>
@@ -35,9 +36,19 @@ import coursesFeed from '@/components/coursesFeed.vue';
 
 export default defineComponent({
 	components: {coursesFeed},
+	data() {
+		return {
+			showCourseForm: false,
+		};
+	},
+	methods: {
+		toggleCourseForm() {
+			this.showCourseForm = !this.showCourseForm;
+		}
+	},
 });
 </script>
 
 <style lang="less">
-@import "../css/courses.less";
+@import "../css/main.less";
 </style>
