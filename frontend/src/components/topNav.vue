@@ -6,7 +6,7 @@
 				<button class="btn btn-dark" type="button" data-bs-toggle="dropdown" aria-expanded="false">
 					<i class="bi bi-hand-index"></i>
 				</button>
-				<ul class="dropdown-menu">
+				<ul class="dropdown-menu my-1">
 					<li>
 						<router-link class="dropdown-item py-2" to="/home">
 							<i class="bi bi-house"></i> Home
