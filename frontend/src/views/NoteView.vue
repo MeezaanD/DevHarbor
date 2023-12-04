@@ -1,7 +1,8 @@
 <template>
 	<section id="notes">
 		<router-link class="path-to-home" to="/home"><i class="bi bi-arrow-left-circle"></i></router-link>
-		<button @click="toggleNoteForm" class="btn btn-primary float-end m-2">{{ showNoteForm ? 'Cancel' : 'Add Note' }}</button>
+		<button @click="toggleNoteForm" class="btn btn-primary float-end m-2">
+			{{ showNoteForm ? 'Cancel' : 'Add Note' }}</button>
 		<div class="notes">
 			<div v-if="showNoteForm" class="noteForm">
 				<h2 class="py-2 border-2 border-bottom">New Note</h2>
@@ -21,7 +22,7 @@
 					<button class="createNote" type="submit">Create Note</button>
 				</form>
 			</div>
-			<notesFeed v-if="!showNoteForm"/>
+			<notesFeed v-if="!showNoteForm" />
 		</div>
 	</section>
 </template>

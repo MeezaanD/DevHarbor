@@ -21,6 +21,7 @@
 			<div class="form-row py-3">
 				<router-link to="/register">Dont have an account?</router-link>
 			</div>
+			<router-link to="/home">Skip for now</router-link>
 		</form>
 	</section>
 </template>

@@ -1,6 +1,7 @@
 <template>
 	<section id="user">
 		<h2 class="py-2 border-2 border-bottom">User Profile</h2>
+		<router-link class="path-to-home" to="/home"><i class="bi bi-arrow-left-circle"></i></router-link>
 	</section>
 </template>
 

@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<topNav v-if="showTopNav" />
-		<router-view/>
+		<router-view />
 	</div>
 </template>
   
