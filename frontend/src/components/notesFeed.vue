@@ -19,5 +19,6 @@ export default defineComponent({
 </script>
 
 <style lang="less">
+@import "../css/main.less";
 @import "../css/notes.less";
 </style>

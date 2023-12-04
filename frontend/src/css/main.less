@@ -1,8 +1,8 @@
 // Global styling for frontend
 
-// External content 
+// External content
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
 
 * {
 	padding: 0;
@@ -14,11 +14,7 @@
 // text
 @light-text: #ffff;
 @dark-text: #0000;
-@default: 'Poppins', sans-serif;
-
-html {
-	height: 100%;
-}
+@default: "Poppins", sans-serif;
 
 // a {
 // 	text-decoration: none !important;
@@ -30,12 +26,16 @@ html {
 	width: 100%;
 }
 
-#notes, #projects, #courses {
+#notes,
+#projects,
+#courses {
 	.path-to-home {
 		margin: 1rem;
 	}
 
-	.notes, #projects, .courses {
+	.notes,
+	.projects,
+	.courses {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-evenly;
@@ -43,7 +43,9 @@ html {
 		margin: auto;
 		width: 100%;
 
-		.createNote, .createProject, .createCourse {
+		.createNote,
+		.createProject,
+		.createCourse {
 			border: 1px solid black;
 			background: black;
 			color: #ffff;
