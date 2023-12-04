@@ -7,6 +7,7 @@ import { ElTimeline, ElTimelineItem, ElCard, ElIcon } from 'element-plus';
 import 'element-plus/dist/index.css'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 const app = createApp(App);
 

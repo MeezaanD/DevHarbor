@@ -1,12 +1,5 @@
 <template>
 	<section id="home">
-		<div class="d-flex justify-content-between p-3">
-			<h3>Hello, Username</h3>
-			<div class="buttons">
-				<button class="btn btn-dark mx-2">Settings</button>
-				<button class="btn btn-dark mx-2">Sign out</button>
-			</div>
-		</div>
 		<div class="feed-section">
 			<ul>
 				<li class="feed-options"><router-link to="/note">Notes</router-link></li>

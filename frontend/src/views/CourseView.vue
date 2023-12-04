@@ -1,6 +1,6 @@
 <template>
 	<section id="courses">
-		<router-link class="path-to-home" to="/home">Back</router-link>
+		<router-link class="path-to-home" to="/home"><i class="bi bi-arrow-left-circle"></i></router-link>
 		<button @click="toggleCourseForm" class="btn btn-primary float-end m-2">{{ showCourseForm ? 'Cancel' : 'Add Course' }}</button>
 		<div class="courses">
 			<div v-if="showCourseForm" class="courseForm">
