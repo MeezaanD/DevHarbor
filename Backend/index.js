@@ -20,5 +20,5 @@ app.use(errorHandling);
 
 // Start the server
 app.listen(port, () => {
-  console.log(`Server is live on lohttp://localhost:${port}`);
+  console.log(`Server is live on http://localhost:${port}`);
 });

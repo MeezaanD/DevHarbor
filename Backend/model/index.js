@@ -81,7 +81,8 @@ class User {
 	async createUser(req, res) {
 		const info = req.body;
 		const user_id = uuidv4();
-		const hashedPassword = await hash(info.password, 15);
+		const hashedPassword = await hash(info.password || '', 15);
+
 
 		const user = {
 			user_id,

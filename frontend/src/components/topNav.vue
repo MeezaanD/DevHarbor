@@ -1,6 +1,6 @@
 <template>
 	<div class="d-flex align-items-center justify-content-between p-3">
-		<h3>Hi, Username</h3>
+		<h3 class="text-light">Hi, Username</h3>
 		<div class="buttons">
 			<div class="dropdown">
 				<button class="btn btn-dark" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -33,7 +33,7 @@
 						</router-link>
 					</li>
 					<li>
-						<router-link class="btn btn-dark mx-3 my-2" to="/logout">
+						<router-link class="btn btn-dark mx-3 my-2" :to="{name: 'logout'}">
 							<i class="bi bi-box-arrow-right"></i> Logout
 						</router-link>
 					</li>
