@@ -1,10 +1,11 @@
 <template>
 	<div class="d-flex align-items-center justify-content-between p-3">
 		<h3 class="text-light">Hi, Username</h3>
+		<!-- <img class="profile-img" src="https://i.postimg.cc/859CkZwP/1700057493682.jpg" alt="profile-img"> -->
 		<div class="buttons">
 			<div class="dropdown">
-				<button class="btn btn-dark" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-					<i class="bi bi-hand-index"></i>
+				<button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+					<img class="profile-img" src="https://i.postimg.cc/859CkZwP/1700057493682.jpg" alt="profile-img">
 				</button>
 				<ul class="dropdown-menu my-1">
 					<li>

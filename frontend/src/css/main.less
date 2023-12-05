@@ -11,6 +11,12 @@
 	font-family: @default;
 }
 
+// primarily built for mobile that is the reason for giving a max width
+#app {
+	max-width: 380px;
+	margin: auto;
+	width: 100%;
+}
 
 // text
 @light-text: #ffff;
@@ -20,6 +26,13 @@
 body {
 	color: @light-text ;
 	background-image: linear-gradient(to right, #141E30, #243B55);
+
+	.profile-img {
+		max-width: 4rem;
+		padding: 0;
+		width: 100%;
+		border-radius: 50%;
+	}
 
 	label, input {
 		color: white !important;

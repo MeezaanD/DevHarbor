@@ -4,13 +4,13 @@
 		<form @submit.prevent="registerForm">
 			<div class="form-row py-2">
 				<div class="form-floating">
-					<input type="text" v-model="firstName" class="form-control" placeholder="John" required />
+					<input type="text" v-model="firstname" class="form-control" placeholder="John" required />
 					<label for="floatingInput">First Name</label>
 				</div>
 			</div>
 			<div class="form-row py-2">
 				<div class="form-floating">
-					<input type="text" v-model="lastName" class="form-control" placeholder="Doe" required />
+					<input type="text" v-model="lastname" class="form-control" placeholder="Doe" required />
 					<label for="floatingInput">Last Name</label>
 				</div>
 			</div>
@@ -22,13 +22,15 @@
 			</div>
 			<div class="form-row py-2">
 				<div class="form-floating mb-3">
-					<input type="password" v-model="password" class="form-control" placeholder="Password" required />
+					<input class="form-control" type="password" v-model="password"  placeholder="Password" required />
 					<label for="floatingPassword">Password</label>
 				</div>
 			</div>
 			<div class="form-row pb-3">
-				<label class="pb-3" for="ProfilePicture">Profile Picture</label>
-				<input class="form-control" type="file" id="formFile" @change="handleFileChange" />
+				<div class="form-floating">
+					<input class="form-control" type="text" id="formFile" v-model="profile_img" placeholder="Img URL" required/>
+					<label class="pb-3" for="ProfilePicture">Profile Picture</label>
+				</div>
 			</div>
 			<div class="form-row py-3">
 				<button class="registerBtn" type="submit">Register</button>
@@ -47,46 +49,29 @@ import { useStore } from 'vuex';
 export default defineComponent({
 	name: 'CreateAccView',
 	setup() {
-		const firstName = ref('');
-		const lastName = ref('');
+		const firstname = ref('');
+		const lastname = ref('');
 		const email = ref('');
 		const password = ref('');
 		const profile_img = ref('');
 		const store = useStore();
 
-		const handleFileChange = (event: Event) => {
-			const input = event.target as HTMLInputElement;
-			const file = input.files?.[0];
-
-			if (file) {
-				const reader = new FileReader();
-
-				reader.onload = (e) => {
-					// e.target.result contains the base64-encoded string
-					profile_img.value = e.target?.result as string;
-				};
-
-				reader.readAsDataURL(file);
-			}
-		};
-
 		const registerForm = async () => {
 			try {
-				const formData = new FormData();
-				formData.append('firstName', firstName.value);
-				formData.append('lastName', lastName.value);
-				formData.append('email', email.value);
-				formData.append('password', password.value);
-				formData.append('profile_img', profile_img.value);
-
-				const response = await store.dispatch('register', formData);
-				console.log(response);
-			} catch (error) {
-				console.error(error);
+				await store.dispatch('register', {
+					firstname: firstname.value,
+					lastname: lastname.value,
+					email: email.value,
+					password: password.value,
+					profile_img: profile_img.value
+				})
+			}
+			catch(error) {
+				console.error(error)
 			}
 		};
 
-		return { firstName, lastName, email, password, profile_img, registerForm, handleFileChange };
+		return { firstname, lastname, email, password, profile_img, registerForm };
 	},
 });
 </script>

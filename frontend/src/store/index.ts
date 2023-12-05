@@ -3,9 +3,9 @@ import { createStore } from 'vuex';
 import axios from 'axios';
 import router from '@/router'
 
-// const api = "https://devharbor-api.onrender.com/";
+const api = "https://devharbor-api.onrender.com/";
 
-const api = "http://localhost:2003/";
+// const api = "http://localhost:2003/";
 export default createStore({
 	state: {
 		user: null,
@@ -40,9 +40,7 @@ export default createStore({
 					localStorage.setItem('user_token', jToken); // Updated key
 					localStorage.setItem('user', JSON.stringify(result));
 					context.commit('SET_MSG_SUCCESS', msg);
-					setTimeout(() => {
-						router.push({ name: 'home' });
-					}, 3000);
+					router.push('/home');
 				} else {
 					context.commit('SET_MSG_SUCCESS', err);
 				}
@@ -54,20 +52,22 @@ export default createStore({
 			try {
 				const res = await axios.post(`${api}register`, payload);
 				console.log('Response:', res);
-				alert('Successfully Added User')
-				const { result, msg, err } = await res.data;
+				const { result, jToken, msg, err } = await res.data;
 				if (result) {
 					context.commit('SET_USER', result);
+					context.commit('SET_TOKEN', jToken);
+					localStorage.setItem('user_token', jToken);
+					localStorage.setItem('user', JSON.stringify(result));
 					context.commit('SET_MSG_SUCCESS', msg);
+					router.push('/home');
 				} else {
-					context.commit('SET_MSG_SUCCESS', err)
+					context.commit('SET_MSG_SUCCESS', err);
 				}
 			} catch (error) {
-				console.error(error)
+				console.error(error);
 			}
 		},
 		logout({ commit }) {
-			// Clear user, login status, and token from the store and local storage
 			commit('SET_USER', null);
 			commit('SET_LOGGED_IN', false);
 			commit('SET_TOKEN', null);

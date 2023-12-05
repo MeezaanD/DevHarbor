@@ -1,21 +1,10 @@
 # Project Name
 
-[Must still do]
-
-## Table of Contents
-
-- [Overview](#overview)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Endpoints](#endpoints)
-  - [Users](#users)
-  - [Projects](#projects)
-  - [Notes](#notes)
-  - [Courses](#courses)
+DevHarbor
 
 ## Overview
 
-[Must still do]
+A basic fullstack crud application for users to manage their notes, projects, courses connecting to the backend
 
 ## Installation
 
