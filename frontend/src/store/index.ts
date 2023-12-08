@@ -73,6 +73,15 @@ export default createStore({
 			commit('SET_TOKEN', null);
 			localStorage.removeItem('user_token'); // Updated key
 			router.push('/home');
+		},
+		async getUser(context, id) {
+			const res = await axios.get(`${api}/user:${id}`)
+			let {results, err } = await res.data;
+			if (results) {
+				context.commit('setUser', results)
+			} else {
+				context.commit('setMessage', err)
+			}
 		}
 	},
 	modules: {}

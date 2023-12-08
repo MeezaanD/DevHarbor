@@ -7,19 +7,19 @@
 				<h2 class="py-2 border-2 border-bottom">New Project</h2>
 				<form action="" method="post">
 					<div class="form-floating mb-3">
-						<input type="text" class="form-control" id="floatingTitle">
+						<input type="text" class="form-control" id="floatingTitle" placeholder="Project Title">
 						<label for="floatingTitle">Title</label>
 					</div>
 					<div class="form-floating mb-3">
-						<input type="text" class="form-control" id="floatingDesign">
+						<input type="text" class="form-control" id="floatingDesign" placeholder="Project Design">
 						<label for="floatingDesign">Design</label>
 					</div>
 					<div class="form-floating mb-3">
-						<input type="text" class="form-control" id="floatingCode">
+						<input type="text" class="form-control" id="floatingCode" placeholder="Project Code">
 						<label for="floatingCode">Code</label>
 					</div>
 					<div class="form-floating mb-3">
-						<input type="text" class="form-control" id="floatingLive">
+						<input type="text" class="form-control" id="floatingLive" placeholder="Project Live">
 						<label for="floatingLive">Live</label>
 					</div>
 					<div class="form-floating mb-3">

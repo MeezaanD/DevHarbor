@@ -8,11 +8,11 @@
 				<h2 class="py-2 border-2 border-bottom">New Course</h2>
 				<form action="" method="post">
 					<div class="form-floating mb-3">
-						<input type="text" class="form-control" id="floatingTitle">
+						<input type="text" class="form-control" id="floatingTitle" placeholder="Course Title">
 						<label for="floatingTitle">Title</label>
 					</div>
 					<div class="form-floating mb-3">
-						<input type="text" class="form-control" id="floatingLink">
+						<input type="text" class="form-control" id="floatingLink" placeholder="Course Link">
 						<label for="floatingLink">Link</label>
 					</div>
 					<div class="form-floating mb-3">

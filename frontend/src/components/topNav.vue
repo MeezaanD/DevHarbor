@@ -37,11 +37,6 @@
 				</button>
 				<ul class="dropdown-menu my-1">
 					<li>
-						<router-link class="dropdown-item py-2" to="/home">
-							<i class="bi bi-house"></i> Home
-						</router-link>
-					</li>
-					<li>
 						<router-link class="dropdown-item py-2" to="/user">
 							<i class="bi bi-person-circle"></i> Profile
 						</router-link>
