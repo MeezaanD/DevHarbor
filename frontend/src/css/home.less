@@ -1,4 +1,4 @@
-// 
+@import "./main.less";
 
 #home {
 	margin: auto;
@@ -33,11 +33,17 @@
 			max-width: 30rem;
 			width: 100%;
 
+			&:hover {
+				transform: translateY(-5px);
+			}
+
 			a {
 				text-decoration: none;
-				color: white;
+				color: @light-text;
 				font-size: 25px;
+
 			}
+			
 		}
 	}
 }

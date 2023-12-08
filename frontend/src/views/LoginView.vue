@@ -59,5 +59,5 @@ export default defineComponent({
 </script>
 
 <style lang="less">
-@import "../css/login.less";
+@import "../css/main.less";
 </style>

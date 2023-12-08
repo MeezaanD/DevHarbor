@@ -1,7 +1,5 @@
 // Global styling for frontend
 
-// External content
-
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
 
 * {
@@ -49,6 +47,33 @@ body {
 		font-size: 30px;
 		width: 100%;
 	}
+
+	#register, #login {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: start;
+		height: 100vh;
+		margin: auto; 
+		max-width: 20rem;
+		width: 100%;
+	
+		.title {
+			width: 100%;
+		}
+	
+		.registerBtn, .loginBtn {
+			border: 1px solid black;
+			background: black;
+			color: @light-text;
+			border-radius: 5px;
+			padding: 1rem;
+			max-width: 20rem;
+			width: 100%;
+			// margin: 5px 0;
+		}
+	  }
 	
 	#notes,
 	#projects,
@@ -87,10 +112,10 @@ body {
 		.el-card {
 			background-color: transparent;
 			color: white;
-		}
-	
-		.el-card:hover {
-			transform: translateY(-5px);
+
+			&:hover {
+				transform: translateY(-5px);
+			}
 		}
 	
 		.el-timeline {

@@ -77,6 +77,6 @@ export default defineComponent({
 </script>
   
 <style lang="less">
-@import "../css/register.less";
+@import "../css/main.less";
 </style>
   
