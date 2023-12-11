@@ -1,7 +1,5 @@
 <template>
 	<div class="d-flex align-items-center justify-content-between p-3">
-		<!-- <h3 class="text-light">Hi, Username</h3>
-		 -->
 		 <div class="dropdown">
 			<button class="btn btn-outline-light" type="button" data-bs-toggle="dropdown" aria-expanded="false">
 				Menu
@@ -13,17 +11,17 @@
 					</router-link>
 				</li>
 				<li>
-					<router-link class="dropdown-item py-2" to="/note">
+					<router-link class="dropdown-item py-2" to="/notes">
 						<i class="bi bi-journal-check"></i> Notes
 					</router-link>
 				</li>
 				<li>
-					<router-link class="dropdown-item py-2" to="/project">
+					<router-link class="dropdown-item py-2" to="/projects">
 						<i class="bi bi-tools"></i> Projects
 					</router-link>
 				</li>
 				<li>
-					<router-link class="dropdown-item py-2" to="/course">
+					<router-link class="dropdown-item py-2" to="/courses">
 						<i class="bi bi-book"></i> Courses
 					</router-link>
 				</li>
@@ -32,8 +30,7 @@
 		<div class="buttons">
 			<div class="dropdown">
 				<button class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-					<img class="profile-img" src="https://i.postimg.cc/859CkZwP/1700057493682.jpg" alt="profile-img">
-					<!-- <img class="profile-img" src="https://i.postimg.cc/6qZqxgmZ/MD.png" alt="profile-img"> -->
+					<img class="profile-img" :src="$store.state.user?.profile_img" alt="profile-img">
 				</button>
 				<ul class="dropdown-menu my-1">
 					<li>

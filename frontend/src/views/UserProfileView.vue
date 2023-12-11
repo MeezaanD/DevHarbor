@@ -9,13 +9,9 @@
 				</router-link>
 			</div>
 			<div class="mt-3">
-				<!-- <p>{{ $store.state.user?.firstname }}</p>
+				<p>{{ $store.state.user?.firstname }}</p>
 				<p>{{ $store.state.user?.lastname }}</p>
 				<p>{{ $store.state.user?.email }}</p>
-				<img :src="$store.state.user?.profile_img" alt=""> -->		
-				<p>Firstname</p>
-				<p>Lastname</p>
-				<p>email@address.com</p>
 				<img :src="$store.state.user?.profile_img" alt="">
 			</div>
 		</div>

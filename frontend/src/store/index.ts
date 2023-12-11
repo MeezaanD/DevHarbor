@@ -11,7 +11,10 @@ export default createStore({
 		user: null,
 		loggedIn: false,
 		token: null,
-		msgSuccess: null
+		msgSuccess: null,
+		notes: null,
+		projects: null,
+		courses: null
 	},
 	mutations: {
 		SET_USER(state, user) {
@@ -25,6 +28,15 @@ export default createStore({
 		},
 		SET_MSG_SUCCESS(state, msg) {
 			state.msgSuccess = msg;
+		},
+		SET_USER_NOTES(state, notes) {
+			state.notes = notes;
+		},
+		SET_USER_PROJECTS(state, projects) {
+			state.projects = projects;
+		},
+		SET_USER_COURSES(state, courses) {
+			state.courses = courses;
 		}
 	},
 	actions: {
@@ -75,12 +87,86 @@ export default createStore({
 			router.push('/home');
 		},
 		async getUser(context, id) {
-			const res = await axios.get(`${api}/user:${id}`)
-			let {results, err } = await res.data;
-			if (results) {
-				context.commit('setUser', results)
-			} else {
-				context.commit('setMessage', err)
+			try {
+			  const res = await axios.get(`${api}/user/${id}`);
+			  let { results, err } = await res.data;
+			  if (results) {
+				context.commit('SET_USER', results);
+			  } else {
+				context.commit('setMessage', err);
+			  }
+			} catch (error) {
+			  console.error('Error fetching user:', error);
+			  context.commit('setMessage', 'Error fetching user');
+			}
+		  },	  
+		async getNotes(context) {
+			try {
+				if (!context.state.user) {
+					console.log("User is not logged in");
+					return;
+				}
+				const userId = context.state.user.user_id;
+				if (!userId) {
+					console.error("User ID is null or undefined");
+					return;
+				}
+				const res = await axios.get(`${api}user/${userId}/notes`);
+				let { results, err } = await res.data;
+				if (results) {
+					context.commit('SET_USER_NOTES', results);
+					console.log(results);
+				} else {
+					context.commit('setMessage', err);
+				}
+			} catch (error) {
+				console.error(error);
+			}
+		},
+		async getProjects(context) {
+			try {
+				if (!context.state.user) {
+					console.log("User is not logged in");
+					return;
+				}
+				const userId = context.state.user.user_id;
+				if (!userId) {
+					console.error("User ID is null or undefined");
+					return;
+				}
+				const res = await axios.get(`${api}user/${userId}/projects`);
+				let { results, err } = await res.data;
+				if (results) {
+					context.commit('SET_USER_PROJECTS', results);
+					console.log(results);
+				} else {
+					context.commit('setMessage', err);
+				}
+			} catch (error) {
+				console.error(error);
+			}
+		},
+		async getCourses(context) {
+			try {
+				if (!context.state.user) {
+					console.log("User is not logged in");
+					return;
+				}
+				const userId = context.state.user.user_id;
+				if (!userId) {
+					console.error("User ID is null or undefined");
+					return;
+				}
+				const res = await axios.get(`${api}user/${userId}/courses`);
+				let { results, err } = await res.data;
+				if (results) {
+					context.commit('SET_USER_COURSES', results);
+					console.log(results);
+				} else {
+					context.commit('setMessage', err);
+				}
+			} catch (error) {
+				console.error(error);
 			}
 		}
 	},

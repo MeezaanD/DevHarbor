@@ -34,20 +34,35 @@ const router = createRouter({
 			component: () => import('../views/HomeView.vue')
 		},
 		{
-			path: '/note',
+			path: '/notes',
 			name: 'notes',
 			component: () => import('../views/NoteView.vue')
 		},
 		{
-			path: '/project',
+			path: '/note',
+			name: 'single-note',
+			component: () => import('../views/SingleNoteView.vue')
+		},
+		{
+			path: '/projects',
 			name: 'projects',
 			component: () => import('../views/ProjectView.vue')
 		},
 		{
-			path: '/course',
+			path: '/project',
+			name: 'single-project',
+			component: () => import('../views/SingleProjectView.vue')
+		},
+		{
+			path: '/courses',
 			name: 'course',
 			component: () => import('../views/CourseView.vue')
-		}
+		},
+		{
+			path: '/note',
+			name: 'single-course',
+			component: () => import('../views/SingleCourseView.vue')
+		},
 	] as RouteRecordRaw[] 
 });
 

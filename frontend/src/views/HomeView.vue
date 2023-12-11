@@ -3,17 +3,17 @@
 		<div class="feed-section">
 			<ul>
 				<li class="feed-options">
-					<router-link to="/note">
+					<router-link to="/notes">
 						<i class="bi bi-journal-check"></i> Notes
 					</router-link>
 				</li>
 				<li class="feed-options">
-					<router-link to="/project">
+					<router-link to="/projects">
 						<i class="bi bi-tools"></i> Projects
 					</router-link>
 				</li>
 				<li class="feed-options">
-					<router-link to="/course">
+					<router-link to="/courses">
 						<i class="bi bi-book"></i> Courses
 					</router-link>
 				</li>
